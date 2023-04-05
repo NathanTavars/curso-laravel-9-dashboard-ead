@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\UserRepositoryInterface;
+use stdClass;
 
 class UserService
 {
@@ -15,8 +16,11 @@ class UserService
 
     public function getAll(string $filter = ''): array
     {
+        $users = $this->repository->getAll($filter);
 
-        return $this->repository->getAll($filter);
+        
+
+        return convertItemsOfArrayToObject($users);
     }
 
     public function findById(string $id): object|null
