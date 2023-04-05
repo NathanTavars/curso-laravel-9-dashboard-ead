@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->group(function () {
 
+    Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+    
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
     
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
