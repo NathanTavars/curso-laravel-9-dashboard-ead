@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,24 +11,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
     </style>
-    <link rel="stylesheet" href="{{ url('style/custom.css')}}">
+    <link rel="stylesheet" href="{{ url('style/custom.css') }}">
 </head>
 
 <body>
 
     <body class="bg-gray-100 font-family-karla flex">
+
         @include('admin.layouts._partials.sidebar')
-        
+
         <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
-            
             @include('admin.layouts._partials.header')
-            
+
             <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
                 <main class="w-full flex-grow p-6">
                     @yield('content')
                 </main>
 
-                @include('admin.layouts._partials.header')
+                @include('admin.layouts._partials.footer')
             </div>
 
         </div>

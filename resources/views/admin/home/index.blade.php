@@ -1,7 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('title', 'Home')
-    
 
 @section('content')
 <h1 class="w-full text-3xl text-black pb-6">Dashboard</h1>
@@ -80,6 +79,9 @@
             <div class="p-6">
                 <div class="justify-between items-center flex mb-3">
                     <div class="flex shrink-1 grow-9 items-center justify-center">
+                        <div
+                            class="inline-flex items-center capitalize border py-0.5 px-2 text-xs rounded-lg bg-red-600 text-white border-red-700 mr-1.5 last:mr-0">
+                            <span class="inline-flex justify-center items-center w-4 h-4 mr-2"><svg
                                     viewBox="0 0 24 24" width="16" height="16" class="inline-block">
                                     <path fill="currentColor"
                                         d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
