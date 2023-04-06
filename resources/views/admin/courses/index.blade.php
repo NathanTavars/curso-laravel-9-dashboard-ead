@@ -41,7 +41,7 @@
                             <div class="flex-shrink-0 w-10 h-10">
                                 @if ($course->image)
                                     <img class="w-full h-full rounded-full"
-                                        src="{{ url({$course->image})}}"
+                                        src="{{ url("storage/{$course->image}") }}"
                                         alt="{{ $course->name }}" />
                                 @endif
                             </div>

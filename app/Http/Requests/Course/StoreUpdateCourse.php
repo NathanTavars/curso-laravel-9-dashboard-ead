@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Course;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCourse extends FormRequest
+class StoreUpdateCourse extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +24,12 @@ class StoreCourse extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'name' => [
                 'required',
                 'min:3',
                 'max:255',
-                'unique:courses',
+                Rule::unique('courses')->ignore($this->course),
             ],
             'image' => [
                 'nullable',
@@ -45,5 +46,8 @@ class StoreCourse extends FormRequest
                 'boolean'
             ]
         ];
+
+        return $rules;
     }
+    
 }
