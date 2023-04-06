@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Cadastrar Novo Usuário')
+@section('title', 'Editar Novo Usuário')
 
 @section('content')
 <h1 class="w-full text-3xl text-black pb-6">
-    Editar o Usuário {{ $user->name }}
+    @section('title', "Editar o Usuário {$user->name}")
 </h1>
 
 <div class="flex flex-wrap">
