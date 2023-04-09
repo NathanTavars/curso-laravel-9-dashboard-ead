@@ -51,13 +51,6 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function destroy($id)
-    {
-        $this->service->delete($id);
-
-        return redirect()->route('users.index');
-    }
-
     public function edit($id)
     {
         if (!$user = $this->service->findById($id))
@@ -79,6 +72,13 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function destroy($id)
+    {
+        $this->service->delete($id);
+
+        return redirect()->route('users.index');
+    }
+
     public function changeImage($id)
     {
         if (!$user = $this->service->findById($id))
@@ -89,7 +89,9 @@ class UserController extends Controller
 
     public function uploadFile(StoreImage $request, UploadFile $uploadFile, $id)
     {
-        $path = $uploadFile->store($request->image, 'users');
+        $path = $uploadFile->store($request->image, 'public/users');
+
+        dd($path);
 
         if (!$this->service->update($id, ['image' => $path])) {
             return back();
