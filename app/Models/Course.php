@@ -38,6 +38,8 @@ class Course extends Model
         'id' => 'string',
     ];
 
+    
+
     protected function image(): Attribute
     {
         return Attribute::make(

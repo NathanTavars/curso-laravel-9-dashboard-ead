@@ -12,6 +12,14 @@ class Support extends Model
     protected $fillable = [
         'status', 'description', 'user_id', 'lesson_id'
     ];
+    
+    /**
+     * Indicates if the model's ID is auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
 
     public function user()
     {
@@ -21,5 +29,10 @@ class Support extends Model
     public function lesson()
     {
         return $this->belongsTo(Lesson::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(ReplySupport::class);
     }
 }
