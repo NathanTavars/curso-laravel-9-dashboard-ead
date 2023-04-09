@@ -91,7 +91,6 @@ class UserController extends Controller
     {
         $path = $uploadFile->store($request->image, 'public/users');
 
-        dd($path);
 
         if (!$this->service->update($id, ['image' => $path])) {
             return back();
