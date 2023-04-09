@@ -11,7 +11,8 @@ use App\Repositories\Eloquent\{
 use App\Repositories\{
     UserRepositoryInterface,
     CourseRepositoryInterface,
-    AdminRepositoryInterface
+    AdminRepositoryInterface,
+    ModuleRepositoryInterface
 };
 use Illuminate\Support\ServiceProvider;
 

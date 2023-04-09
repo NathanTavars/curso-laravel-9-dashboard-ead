@@ -36,18 +36,19 @@ class ModuleRepository implements ModuleRepositoryInterface
 
     public function createByCourse(string $courseId, array $data): object
     {
+        $data['course_id'] = $courseId;
         return $this->model->create($data);
     }
 
     public function update(string $id, array $data): object|null
     {
-        if (!$data = $this->findById($id)) {
+        if (!$itemDb = $this->findById($id)) {
             return null;
         }
 
-        $data->update($data);
+        $itemDb->update($data);
 
-        return $data;
+        return $itemDb;
     }
 
     public function delete(string $id): bool
