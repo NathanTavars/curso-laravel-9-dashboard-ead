@@ -8,6 +8,7 @@ use App\Repositories\Eloquent\{
     LessonRepository,
     AdminRepository,
     ModuleRepository,
+    ReplySupportRepository,
     SupportRepository
 };
 use App\Repositories\{
@@ -16,6 +17,7 @@ use App\Repositories\{
     LessonRepositoryInterface,
     AdminRepositoryInterface,
     ModuleRepositoryInterface,
+    ReplySupportRepositoryInterface,
     SupportRepositoryInterface
 };
 use Illuminate\Support\ServiceProvider;
@@ -58,6 +60,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             SupportRepositoryInterface::class,
             SupportRepository::class,
+        );
+
+        $this->app->singleton(
+            ReplySupportRepositoryInterface::class,
+            ReplySupportRepository::class,
         );
     }
 
