@@ -34,7 +34,7 @@ class ReplySupport extends Model
 
     public function support()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(Support::class);
     }
 
 }

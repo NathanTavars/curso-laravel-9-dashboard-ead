@@ -2,10 +2,16 @@
 
 namespace App\Providers;
 
+use App\Events\SupportReplied;
+use App\Listeners\SendMailSupportReplied;
 use App\Models\{Admin,User,Course, Lesson, ReplySupport, };
 use App\Observers\{AdminObserver,UserObserver,CourseObserver,LessonObserver, ReplySupportObserver, };
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Auth\Events\{
+    Registered
+};
+use Illuminate\Auth\Listeners\{
+    SendEmailVerificationNotification
+};
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 
@@ -20,6 +26,10 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+
+        SupportReplied::class => [
+            SendMailSupportReplied::class,
+        ]
     ];
 
     /**
